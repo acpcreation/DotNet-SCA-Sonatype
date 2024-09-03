@@ -48,7 +48,7 @@ jobs:
     - name: Download and Scan with Sonatype Lifecycle CLI
       run: |
          echo Sonatype-CLI.jar - https://download.sonatype.com/clm/scanner/latest.jar 
-         curl --location ${{ env.SonatypeCLIUrl }} > Sonatype.zip
+         curl --location https://sonatype-download.global.ssl.fastly.net/repository/downloads-prod-group/scanner/nexus-iq-cli-1.181.0-01+858-windows.zip > Sonatype.zip
          tar -xf Sonatype.zip
          rm Sonatype.zip
          .\nexus-iq-cli.exe -s https://iq.aplattel.ngrok.io/ -a admin:admin!23 -t build -i NET-SCA .
